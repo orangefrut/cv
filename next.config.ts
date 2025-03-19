@@ -5,7 +5,8 @@ const nextConfig: NextConfig = {
 };
 
 module.exports = {
-    exportTrailingSlash: true,  // Для работы с GitHub Pages
+    trailingSlash: true,  // Для работы с GitHub Pages
+    output: 'export', // Это указывает Next.js, что вы хотите экспортировать статический сайт.
 }
 
 export default nextConfig;

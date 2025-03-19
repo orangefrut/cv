@@ -1,26 +1,28 @@
-name: NPM Publish
+name: Deploy to GitHub Pages
 
 on:
   push:
-    tags:
-      - 'v*.*.*'  # Публикация только для версий, например, v1.0.0
+    branches:
+      - main
 
 jobs:
-  publish:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Code
+      - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
-
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Publish to NPM
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}  # Токен доступа к NPM
+      - name: Build and export static site
+        run: |
+          npm run build
+          npm run export
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
