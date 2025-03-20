@@ -8,7 +8,7 @@ export default function Home() {
             <section>
                 <h2>Образование</h2>
                 <ul>
-                    <li>Программная инженерия,
+                    <li><b>Программная инженерия</b><br/>
                         Федеральное государственное бюджетное образовательное учреждение высшего образования «Поволжский государственный
                         технологический университет».
                     </li>
@@ -38,8 +38,8 @@ export default function Home() {
             <section>
                 <h2>Контакты</h2>
                 <p>Если вы хотите связаться со мной, вы можете отправить мне сообщение по электронной почте: <a
-                    href="mailto:example@example.com">example@example.com</a></p>
+                    href="mailto:example@example.com">orange.frut@mail.ru</a></p>
             </section>
         </div>
-    );
+);
 }
