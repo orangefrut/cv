@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    output: 'export',  // Добавляем эту настройку для статического экспорта
+    output: 'export',
+    basePath: '/my-resume',
 };
 
 export default nextConfig;
